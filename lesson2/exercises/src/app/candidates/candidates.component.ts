@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidatesComponent implements OnInit {
    missionName = "LaunchCode Moonshot"
-
+  
    candidates = [
     {name: 'Rusty Rutabaga', data: {age: 5, mass: '0.75 kg', sidekick: 'Blake'}, image: 'assets/images/Blake.png'},
     {name: 'Tessa Tortoise', data: {age: 126, mass: '113 kg', sidekick: 'Sally'}, image: 'assets/images/Sally.png'},
@@ -23,10 +23,24 @@ export class CandidatesComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Code the addToCrew function here:
+  checkExist(candidateName: string): boolean {
+    if(this.crew.find(x => x.name === candidateName) === undefined){
+      return false;
+    } 
 
+    return true;
+  }
+
+  // Code the addToCrew function here:
+  addToCrew(candidate: object) {
+    if(!this.crew.includes(candidate)){
+      this.crew.push(candidate);
+    }
+  } 
 
   // BONUS: Code the changeMissionName function here:
-
+  changeMissionName(newName: string){
+    this.missionName = newName;
+  }
 
 }
