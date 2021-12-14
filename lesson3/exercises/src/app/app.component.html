@@ -41,7 +41,8 @@
    </div>
    <div class="container-control-buttons">
       <button (click)="handleTakeOff();takeOffEnabled=false;clicked=true" [disabled]="clicked">Take Off</button>
-      <button [disabled]="takeOffEnabled">Land</button>
-      <button [disabled]="takeOffEnabled">Abort Mission</button>
+      <button (click)="land();moveRocket(rocketImage, 'land')" [disabled]="takeOffEnabled">Land</button>
+      <button (click)="abort(rocketImage)" [disabled]="takeOffEnabled">Abort Mission</button>
+      {{lastCSS}}
    </div>
 </div>
