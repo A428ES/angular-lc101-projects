@@ -40,8 +40,8 @@
       </div>
    </div>
    <div class="container-control-buttons">
-      <button (click)="handleTakeOff();takeOffEnabled=false;clicked=true" [disabled]="clicked">Take Off</button>
-      <button (click)="land();moveRocket(rocketImage, 'land')" [disabled]="takeOffEnabled">Land</button>
+      <button (click)="handleTakeOff(rocketImage);takeOffEnabled=false;clicked=true" [disabled]="clicked">Take Off</button>
+      <button (click)="land(rocketImage)" [disabled]="takeOffEnabled">Land</button>
       <button (click)="abort(rocketImage)" [disabled]="takeOffEnabled">Abort Mission</button>
       {{lastCSS}}
    </div>
